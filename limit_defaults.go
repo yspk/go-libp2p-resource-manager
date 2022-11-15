@@ -51,7 +51,7 @@ var DefaultLimits = DefaultLimitConfig{
 		StreamsInbound:  4096 << 2,
 		StreamsOutbound: 16384 << 2,
 		Streams:         16384 << 2,
-		ConnsInbound:    256 << 2,
+		ConnsInbound:    256 << 4,
 		ConnsOutbound:   1024 << 2,
 		Conns:           1024 << 2,
 		FD:              512 << 2,
