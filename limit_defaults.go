@@ -48,115 +48,115 @@ func (cfg *DefaultLimitConfig) WithSystemMemory(memFraction float64, minMemory, 
 // DefaultLimits are the limits used by the default limiter constructors.
 var DefaultLimits = DefaultLimitConfig{
 	SystemBaseLimit: BaseLimit{
-		StreamsInbound:  4096 << 2,
-		StreamsOutbound: 16384 << 2,
-		Streams:         16384 << 2,
-		ConnsInbound:    256 << 4,
-		ConnsOutbound:   1024 << 2,
-		Conns:           1024 << 2,
-		FD:              512 << 2,
+		StreamsInbound:  4096 << 4,
+		StreamsOutbound: 16384 << 4,
+		Streams:         16384 << 4,
+		ConnsInbound:    256 << 6,
+		ConnsOutbound:   1024 << 4,
+		Conns:           1024 << 4,
+		FD:              512 << 4,
 	},
 
 	SystemMemory: MemoryLimit{
 		MemoryFraction: 0.125,
 		MinMemory:      128 << 22,
-		MaxMemory:      1 << 32,
+		MaxMemory:      1 << 34,
 	},
 
 	TransientBaseLimit: BaseLimit{
-		StreamsInbound:  128 << 2,
-		StreamsOutbound: 512 << 2,
-		Streams:         512 << 2,
-		ConnsInbound:    32 << 2,
-		ConnsOutbound:   128 << 2,
-		Conns:           128 << 2,
-		FD:              128 << 2,
+		StreamsInbound:  128 << 4,
+		StreamsOutbound: 512 << 4,
+		Streams:         512 << 4,
+		ConnsInbound:    32 << 4,
+		ConnsOutbound:   128 << 4,
+		Conns:           128 << 4,
+		FD:              128 << 4,
 	},
 
 	TransientMemory: MemoryLimit{
 		MemoryFraction: 1,
-		MinMemory:      64 << 22,
-		MaxMemory:      64 << 22,
+		MinMemory:      64 << 20,
+		MaxMemory:      64 << 24,
 	},
 
 	ServiceBaseLimit: BaseLimit{
-		StreamsInbound:  2048 << 2,
-		StreamsOutbound: 8192 << 2,
-		Streams:         8192 << 2,
+		StreamsInbound:  2048 << 4,
+		StreamsOutbound: 8192 << 4,
+		Streams:         8192 << 4,
 	},
 
 	ServiceMemory: MemoryLimit{
 		MemoryFraction: 0.125 / 4,
-		MinMemory:      64 << 22,
-		MaxMemory:      256 << 22,
+		MinMemory:      64 << 20,
+		MaxMemory:      256 << 24,
 	},
 
 	ServicePeerBaseLimit: BaseLimit{
-		StreamsInbound:  256 << 2,
-		StreamsOutbound: 512 << 2,
-		Streams:         512 << 2,
+		StreamsInbound:  256 << 4,
+		StreamsOutbound: 512 << 4,
+		Streams:         512 << 4,
 	},
 
 	ServicePeerMemory: MemoryLimit{
 		MemoryFraction: 0.125 / 16,
-		MinMemory:      16 << 22,
-		MaxMemory:      64 << 22,
+		MinMemory:      16 << 20,
+		MaxMemory:      64 << 24,
 	},
 
 	ProtocolBaseLimit: BaseLimit{
-		StreamsInbound:  1024 << 2,
-		StreamsOutbound: 4096 << 2,
-		Streams:         4096 << 2,
+		StreamsInbound:  1024 << 4,
+		StreamsOutbound: 4096 << 4,
+		Streams:         4096 << 4,
 	},
 
 	ProtocolMemory: MemoryLimit{
 		MemoryFraction: 0.125 / 8,
-		MinMemory:      64 << 22,
-		MaxMemory:      128 << 22,
+		MinMemory:      64 << 20,
+		MaxMemory:      128 << 24,
 	},
 
 	ProtocolPeerBaseLimit: BaseLimit{
-		StreamsInbound:  128 << 2,
-		StreamsOutbound: 256 << 2,
-		Streams:         512 << 2,
+		StreamsInbound:  128 << 4,
+		StreamsOutbound: 256 << 4,
+		Streams:         512 << 4,
 	},
 
 	ProtocolPeerMemory: MemoryLimit{
 		MemoryFraction: 0.125 / 16,
-		MinMemory:      16 << 22,
-		MaxMemory:      64 << 22,
+		MinMemory:      16 << 20,
+		MaxMemory:      64 << 24,
 	},
 
 	PeerBaseLimit: BaseLimit{
-		StreamsInbound:  512 << 2,
-		StreamsOutbound: 1024 << 2,
-		Streams:         1024 << 2,
-		ConnsInbound:    8 << 2,
-		ConnsOutbound:   16 << 2,
-		Conns:           16 << 2,
-		FD:              8 << 2,
+		StreamsInbound:  512 << 4,
+		StreamsOutbound: 1024 << 4,
+		Streams:         1024 << 4,
+		ConnsInbound:    8 << 4,
+		ConnsOutbound:   16 << 4,
+		Conns:           16 << 4,
+		FD:              8 << 4,
 	},
 
 	PeerMemory: MemoryLimit{
 		MemoryFraction: 0.125 / 16,
-		MinMemory:      64 << 22,
-		MaxMemory:      128 << 22,
+		MinMemory:      64 << 20,
+		MaxMemory:      128 << 24,
 	},
 
 	ConnBaseLimit: BaseLimit{
-		ConnsInbound:  1 << 2,
-		ConnsOutbound: 1 << 2,
-		Conns:         1 << 2,
-		FD:            1 << 2,
+		ConnsInbound:  1 << 4,
+		ConnsOutbound: 1 << 4,
+		Conns:         1 << 4,
+		FD:            1 << 4,
 	},
 
-	ConnMemory: 1 << 22,
+	ConnMemory: 1 << 24,
 
 	StreamBaseLimit: BaseLimit{
-		StreamsInbound:  1 << 2,
-		StreamsOutbound: 1 << 2,
-		Streams:         1 << 2,
+		StreamsInbound:  1 << 4,
+		StreamsOutbound: 1 << 4,
+		Streams:         1 << 4,
 	},
 
-	StreamMemory: 16 << 22,
+	StreamMemory: 16 << 24,
 }
